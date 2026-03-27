@@ -1,0 +1,76 @@
+[
+  {
+    "year": 2026,
+    "items": [
+      {
+        "authors": "Rabiul Islam, M., Bulacio, J. C., Bingaman, W., Najm, I., Krishnan, B., & Serletis, D.",
+        "title": "Dynamic Stereoelectroencephalography-Based Phase–Amplitude Coupling in Cingulate Epilepsy",
+        "journal": "International Journal of Neural Systems",
+        "link": "https://www.worldscientific.com/doi/abs/10.1142/S0129065725500819"
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "items": [
+      {
+        "authors": "Kondylis, E., John, N. S., Zavala, B., Feldman, M., Rammo, R., Najm, I., ... & Bulacio, J. C.",
+        "title": "Novel magnetic resonance imaging insights from surgically confirmed temporal lobe encephaloceles support tethering as a potential mechanism of epileptogenesis",
+        "journal": "Epilepsia",
+        "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/epi.70062"
+      },
+      {
+        "authors": "John, N. S., Bulacio, J. C., Alexopoulos, A. V., Bingaman, W., Najm, I., Krishnan, B., & Serletis, D.",
+        "title": "Multifractal spatiotemporal dynamics in human epileptiform stereoelectroencephalography recordings",
+        "journal": "Journal of Neural Engineering",
+        "link": "https://iopscience.iop.org/article/10.1088/1741-2552/adf66a/meta"
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "items": [
+      {
+        "authors": "Nieto Ramos, A., Krishnan, B., Alexopoulos, A. V., Bingaman, W., Najm, I., Bulacio, J. C., & Serletis, D.",
+        "title": "Epileptic network identification: insights from dynamic mode decomposition of sEEG data",
+        "journal": "Journal of Neural Engineering",
+        "link": "https://iopscience.iop.org/article/10.1088/1741-2552/ad705f/meta"
+      }
+    ]
+  },
+  {
+    "year": "2010-2013",
+    "items": [
+      {
+        "authors": "Serletis, D., Carlen, P. L., Valiante, T. A., & Bardakjian, B. L. (2013)",
+        "title": "Phase synchronization of neuronal noise in mouse hippocampal epileptiform dynamics",
+        "journal": "International Journal of Neural Systems",
+        "link": "https://www.worldscientific.com/doi/abs/10.1142/S0129065712500335"
+      },
+      {
+        "authors": "Guirgis, M., Serletis, D., Zhang, J., Florez, C., Dian, J. A., Carlen, P. L., & Bardakjian, B. L. (2013)",
+        "title": "Classification of Multiple Seizure-Like States in Three Different Rodent Models of Epileptogenesis",
+        "journal": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+        "link": "https://ieeexplore.ieee.org/abstract/document/6527924"
+      },
+      {
+        "authors": "Serletis, D., Bardakjian, B. L., Valiante, T. A., & Carlen, P. L. (2012)",
+        "title": "Complexity and multifractality of neuronal noise in mouse and human hippocampal epileptiform dynamics",
+        "journal": "Journal of Neural Engineering",
+        "link": "https://iopscience.iop.org/article/10.1088/1741-2560/9/5/056008/meta"
+      },
+      {
+        "authors": "Serletis, D., Zalay, O. C., Valiante, T. A., Bardakjian, B. L., & Carlen, P. L. (2011)",
+        "title": "Complexity in Neuronal Noise Depends on Network Interconnectivity",
+        "journal": "Annals of Biomedical Engineering",
+        "link": "https://link.springer.com/article/10.1007/s10439-011-0281-x"
+      },
+      {
+        "authors": "Zalay, O. C., Serletis, D., Carlen, P. L., & Bardakjian, B. L. (2010)",
+        "title": "System characterization of neuronal excitability in the hippocampus and its relevance to observed dynamics of spontaneous seizure-like transitions",
+        "journal": "Journal of Neural Engineering",
+        "link": "https://iopscience.iop.org/article/10.1088/1741-2560/7/3/036002/meta"
+      }
+    ]
+  }
+]

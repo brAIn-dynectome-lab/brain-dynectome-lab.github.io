@@ -1,0 +1,138 @@
+[
+    {
+        "date": "2022-08-01",
+        "title": "The Lab Opens!",
+        "summary": "Demitre Serletis moved to the Cleveland Clinic to set up his lab",
+        "type": "celebration"
+    },
+    {
+        "date": "2022-08-17",
+        "title": "A New Arrival!",
+        "summary": "Alejandro Nieto Ramos joins the lab as a post-doctoral research fellow.",
+        "type": "celebration"
+    },
+    {
+        "date": "2023-01-23",
+        "title": "A New Arrival!",
+        "summary": "Neha Sara John joins the lab as a senior research engineer.",
+        "type": "celebration"
+    },
+    {
+        "date": "2023-05-17",
+        "title": "Poster Presentation",
+        "summary": "Alejandro and Neha will present their posters at the Cleveland Clinic Neurological Institute Research Day 2023",
+        "type": "poster"
+    },
+    {
+        "date": "2023-08-23",
+        "title": "A New Arrival!",
+        "summary": "M. Rabiul Islam joins the lab as a post-doctoral research fellow.",
+        "type": "celebration"
+    },
+    
+    {
+        "date": "2023-09-17",
+        "title": "Congratulations Alejandro!",
+        "summary": "Alejandro Nieto Ramos was awarded the American Epilepsy Society Fellowship 2023",
+        "type": "celebration"
+    },
+    {
+        "date": "2023-12-05",
+        "title": "AES Poster Presentation",
+        "summary": "Alejandro will present his poster at the American Epilepsy Society's Annual Meeting in Orlando, FL (1 - 5 December 2023)",
+        "type": "poster"
+    },
+    {
+        "date": "2024-05-05",
+        "title": "UPSTAT Poster Presentation",
+        "summary": "Alejandro will present his poster at the American Epilepsy Society's Annual Meeting in Rochester, NY",
+        "type": "poster"
+    },
+    {
+        "date": "2024-05-05",
+        "title": "CNS Poster Presentation",
+        "summary": "Demitre will present a poster at the Congress of Neurological Surgeons' Annual Meeting in Houston, TX (September 28 - October 2nd, 2024)",
+        "type": "poster"
+    },
+    {
+        "date": "2024-05-24",
+        "title": "CC Research Day Poster Presentation",
+        "summary": "Alejandro, Neha and Rabi will present their posters at the Cleveland Clinic Research Day 2024.",
+        "type": "poster"
+    },
+    {
+        "date": "2024-07-24",
+        "title": "AES Poster Presentation",
+        "summary": "Alejandro, Neha and Rabi will present their posters at the American Epilepsy Society's Annual Meeting in Los Angeles, CA (6 - 10 December 2024).",
+        "type": "poster"
+    },
+    {
+        "date": "2025-08-20",
+        "title": "Congratulations Alejandro!",
+        "summary": "Alejandro's paper 'Epileptic network identification...' was accepted in Journal of Neural Engineering.",
+        "type": "paper"
+    },
+    {
+        "date": "2024-09-17",
+        "title": "Congratulations Rabi!",
+        "summary": "M. Rabiul Islam was awarded the American Epilepsy Society Fellowship 2024",
+        "type": "celebration"
+    },
+    {
+        "date": "2025-11-12",
+        "title": "Congratulations Alejandro!",
+        "summary": "Alejandro Nieto Ramos was awarded the Best Poster Award for his poster at the Cleveland Clinic Research Day 2025.",
+        "type": "celebration"
+    },
+    {
+        "date": "2025-04-17",
+        "title": "NERD Poster Presentation",
+        "summary": "Alejandro, Neha and Neha will present their posters at the Annual Cleveland Clinic Neurologic Education & Research Day (NERD) held on May 13, 2025.",
+        "type": "poster"
+    },
+    {
+        "date": "2025-05-14",
+        "title": "Congratulations Neha!",
+        "summary": "Neha Sara John was awarded the Thomas Epilepsy Award for her poster at NERD 2025.",
+        "type": "celebration"
+    },
+    {
+        "date": "2025-07-24",
+        "title": "SFN Poster Presentation",
+        "summary": "Neha will present her poster at the Society for Neuroscience's Annual Meeting in San Diego, CA (November 15-19, 2025)."
+    },
+
+    {
+        "date": "2025-08-20",
+        "title": "Congratulations Neha!",
+        "summary": "Neha's paper 'Multifractal spatiotemporal dynamics...' was accepted in Journal of Neural Engineering.",
+        "type": "paper"
+    },
+    
+    {
+        "date": "2025-09-24",
+        "title": "AES Poster Presentation",
+        "summary": "Rabi will present his poster at the American Epilepsy Society's Annual Meeting in Atlanta, GA (December 5-9, 2025).",
+        "type": "poster"
+    },    
+
+    {
+        "date": "2025-11-27",
+        "title": "Congratulations Rabi!",
+        "summary": "Rabi's paper 'Dynamic Stereoelectroencephalography-based...' was accepted in International Journal of Neural Systems.",
+        "type": "paper"
+    },
+    {
+        "date": "2026-03-01", 
+        "title": "ASSFN Poster",
+        "summary": "Neha John will present her poster at the American Society for Stereotactic and Functional Neurosurgery Biennial Meeting in Cleveland, OH (May 30 - June 2, 2026)",
+        "type": "poster"
+    },
+    {
+        "date": "2026-03-01",
+        "title": "Congratulations Rabi!",
+        "summary": "M. Rabiul Islam will give an oral presentation at the American Society for Stereotactic and Functional Neurosurgery Biennial Meeting in Cleveland, OH (May 30 - June 2, 2026)",
+        "type": "celebration"
+    }
+    
+]

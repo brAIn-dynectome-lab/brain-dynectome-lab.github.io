@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Lab - Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        /* Hero section with generous padding */
+        .team-hero {
+            color: #FFFFFF;
+            text-align: center;
+            padding: 120px 20px 40px;
+            margin-top: 80px; /* Extra space from navbar */
+        }
+        .team-hero h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        .team-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        /* Team sections */
+        .team-section, .alumni-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+        /* Separator line */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #606099, transparent);
+            margin: 1rem auto;
+            width: 200px;
+            box-shadow: 0 2px 10px rgba(118, 75, 162, 0.3);
+        }
+        /* Team grid - Small non-flip cards */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 0.5rem;
+        }
+        .card-role {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-bio {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .alumni-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #FFF6E6;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .flip-card-front {
+            background: linear-gradient(135deg, #0A3857 0%, #94B9F5 100%);
+            color: #D4DFF8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .flip-card-front img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        .flip-card-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .flip-card-back h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .flip-card-back p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        .social-link:hover {
+            background: #764ba2;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+        }
+        .social-link.github:hover { background: #333; }
+        .social-link.orcid:hover { background: #a6ce39; }
+        .social-link.scholar:hover { background: #4285f4; }
+        .social-link.linkedin:hover { background: #0077b5; }
+        /* Keyframe animations inspired by animejs */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @media (max-width: 600px) {
+            .team-hero {
+                padding: 100px 20px 60px;
+                margin-top: 70px;
+            }
+            .team-hero h1 {
+                font-size: 2.2rem;
+            }
+            .team-section {
+                padding: 60px 20px;
+            }
+            .flip-card {
+                height: 350px;
+            }
+            .flip-card-front img {
+                width: 120px;
+                height: 120px;
+            }
+            .social-links {
+                gap: 0.8rem;
+            }
+            .social-link {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="256x256" href="../images/lab-logo-v2.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Navbar (fixed top) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="../images/lab-logo-v2.png" alt="brAIn Dynectome Lab" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="team.html" class="nav-link active">Team</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section with heading - fully clear of navbar -->
+    <section class="team-hero">
+        <h1>Our Research Team</h1>
+        <p>Meet the researchers driving innovation in the brAIn dynectome lab!</p>
+    </section>
+
+    <!-- Team grid section -->
+    <section class="team-section">
+        <div class="team-grid">
+            <!-- Dr. Demitre Serletis -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/team/DS.webp" alt="Principal Investigator">
+                        <h2>Dr. Demitre Serletis</h2>
+                        <p>Principal Investigator</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Dr. Demitre Serletis</h2>
+                        <p>Dr. Demitre Serletis, MD, PhD, is an epilepsy neurosurgeon-scientist in the Charles Shor Epilepsy Center, within the Neurological Institute at the Cleveland Clinic. He is a graduate of the University of Toronto, where he completed his Neurosurgery residency and PhD in Neuroengineering. </p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/demitre-serletis" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0002-8037-9705" class="social-link orcid" title="ORCID" aria-label="ORCID">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=m81yPaYAAAAJ&hl=en&inst=8024913450255880209&oi=ao" class="social-link scholar" title="Google Scholar" aria-label="Google Scholar">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>   
+                            <a href="https://github.com/brAIn-dynectome-lab" class="social-link github" title="GitHub" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dr. M. Rabiul Islam -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/team/MRI.JPG" alt="Postdoctoral Researcher">
+                        <h2>Dr. M. Rabiul Islam</h2>
+                        <p>Postdoctoral Researcher</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Dr. M. Rabiul Islam</h2>
+                        <p>Dr. M Rabiul Islam is a biosignal informatics post-doc researcher at the Cleveland Clinic, where he develops AI-driven methods to analyze complex brain signals and localize epileptic networks. His work integrates signal processing, machine learning, and neuroscience to advance precision medicine in neurology.</p>
+                        <div class="social-links">   
+                            <a href="https://www.linkedin.com/in/mrabiulusa/" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>                       
+                            <a href="https://orcid.org/0000-0002-4514-8370" class="social-link orcid" title="ORCID" aria-label="ORCID">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=3IeFcWgAAAAJ&hl=en" class="social-link scholar" title="Google Scholar" aria-label="Google Scholar">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://github.com/rabiul3" class="social-link github" title="GitHub" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>                                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neha Sara John -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/team/NSJ.jpg" alt="Senior Research Engineer">
+                        <h2>Neha Sara John</h2>
+                        <p>Senior Research Engineer</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Neha Sara John</h2>
+                        <p>Neha Sara John is a Senior Research Engineer in the Cleveland Clinic's Epilepsy Center. She is a Biomedical Engeineering M.S graduate from the University of Michigan and defended her thesis under the supervision of Dr. William Stacey. She specializes in electrophysiology data analysis pipelines with a focus on multifractal and aperiodic analyses.</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/neha-sara-john/" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a> 
+                            <a href="https://orcid.org/0000-0003-2415-5296" class="social-link orcid" title="ORCID" aria-label="ORCID">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=E9iH51IAAAAJ&hl=en&inst=8024913450255880209" class="social-link scholar" title="Google Scholar" aria-label="Google Scholar">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://github.com/NS-John" class="social-link github" title="GitHub" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Separator Line -->
+    <div class="section-divider"></div>
+
+    <!-- Lab Alumni Section -->
+    <section class="alumni-section">
+        <h2 class="section-title">Lab Alumni</h2>
+        <div class="team-grid">
+            <!-- Add alumni cards here -->
+            <div class="team-card">
+                <div class="card-content">
+                    <h3 class="card-name">LEGENDARY CONTRIBUTORS</h3>
+                     <div class="alumni-item">
+                <span class="alumni-name">Dr. Alejandro Nieto Ramos, PhD</span>
+                <a href="https://www.linkedin.com/in/alejandronieto-ramos" class="alumni-linkedin" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
+                </a>
+                </div>
+                  <div class="alumni-item">
+                <span class="alumni-name">Dr. Efstathios Kondylis</span>
+                <a href="https://www.linkedin.com/in/efstathios-kondylis-b5157a11b" class="alumni-linkedin" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-social">
+      <!-- Replace these URLs with your actual profile links -->
+      <a href="https://www.researchgate.net/profile/Demitre-Serletis" target="_blank" title="ResearchGate" aria-label="ResearchGate">
+        <i class="bi bi-bookmark-heart"></i>
+      </a>
+      <a href="https://providers.clevelandclinic.org/provider/demitre-serletis/4270469" target="_blank" title="Our Location - Cleveland Clinic" aria-label="Google Maps">
+        <i class="bi bi-geo-alt"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/demitre-serletis" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href = "https://x.com/epilepsydoc" target = "_blank" title = "X" aria-label = "X">
+        <i class = "bi bi-twitter-x"></i>
+      </a>
+    </div>
+    
+    <div class="copyright">
+      © 2026 brAIn Dynectome Lab. All rights reserved.
+    </div>
+    
+    <p>Reach out via ResearchGate, LinkedIn, &#120143 or visit us at Cleveland Clinic!</p>
+    <div class="footer-logo">
+    <img src="../images/CC_hires_c.png" alt="Cleveland Clinic" loading="lazy">
+  </div>
+  </footer>
+
+
+    <script>
+        // AnimeJS entrance animations for flip cards
+        anime({
+            targets: '.flip-card',
+            translateY: [50, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+            duration: 800,
+            easing: 'easeOutQuad'
+        });
+    </script>
+</body>
+</html>
