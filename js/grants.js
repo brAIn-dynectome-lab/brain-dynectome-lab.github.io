@@ -19,7 +19,7 @@
         yearGroup.items.forEach(grant => {
           html += `
             <li class="grant-item">
-              <a href="#" class="grant-link" target="_blank" rel="noopener">
+              <a class="grant-item-link" target="_blank" rel="noopener">
                 ${grant.award}<br>
                 <strong>${grant.title}</strong><br>
                 <em>${grant.location}</em>
