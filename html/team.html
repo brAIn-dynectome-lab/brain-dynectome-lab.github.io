@@ -197,7 +197,7 @@
             font-size: 18px;
         }
         .social-link:hover {
-            background: #764ba2;
+            background: #94B9F5 ;
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
@@ -258,25 +258,26 @@
 </head>
 <body>
     <!-- Animated Navbar (fixed top) -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="../images/lab-logo-v2.png" alt="brAIn Dynectome Lab" class="logo-img">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="research.html" class="nav-link">Research</a></li>
-                <li><a href="team.html" class="nav-link active">Team</a></li>
-                <li><a href="publications.html" class="nav-link">Publications</a></li>
-                <li><a href="news.html" class="nav-link">News</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+     <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="../images/lab-logo-v2.png" alt="brAIn Dynectome Lab" class="logo-img">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="research.html" class="nav-link">Research</a></li>
+        <li><a href="team.html" class="nav-link active">Team</a></li>
+        <li><a href="publications.html" class="nav-link">Publications</a></li>
+        <li><a href="grants.html" class="nav-link ">Grants</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
     <!-- Hero section with heading - fully clear of navbar -->
     <section class="team-hero">
@@ -297,7 +298,7 @@
                     </div>
                     <div class="flip-card-back">
                         <h2>Dr. Demitre Serletis</h2>
-                        <p>Dr. Demitre Serletis, MD, PhD, is an epilepsy neurosurgeon-scientist in the Charles Shor Epilepsy Center, within the Neurological Institute at the Cleveland Clinic. He is a graduate of the University of Toronto, where he completed his Neurosurgery residency and PhD in Neuroengineering. </p>
+                        <p>Dr. Demitre Serletis, MD, PhD, is an epilepsy neurosurgeon-scientist in the Epilepsy Center, within the Neurological Institute at the Cleveland Clinic. </p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/demitre-serletis" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
@@ -326,7 +327,7 @@
                     </div>
                     <div class="flip-card-back">
                         <h2>Dr. M. Rabiul Islam</h2>
-                        <p>Dr. M Rabiul Islam is a biosignal informatics post-doc researcher at the Cleveland Clinic, where he develops AI-driven methods to analyze complex brain signals and localize epileptic networks. His work integrates signal processing, machine learning, and neuroscience to advance precision medicine in neurology.</p>
+                        <p>Dr. M Rabiul Islam is a biosignal informatics post-doc researcher at the Cleveland Clinic, where he develops AI-driven methods to analyze complex brain signals and localize epileptic networks. His work integrates signal processing, machine learning, and neuroscience to advance precision medicine in neurology and neurosurgery.</p>
                         <div class="social-links">   
                             <a href="https://www.linkedin.com/in/mrabiulusa/" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
@@ -355,7 +356,7 @@
                     </div>
                     <div class="flip-card-back">
                         <h2>Neha Sara John</h2>
-                        <p>Neha Sara John is a Senior Research Engineer in the Cleveland Clinic's Epilepsy Center. She is a Biomedical Engeineering M.S graduate from the University of Michigan and defended her thesis under the supervision of Dr. William Stacey. She specializes in electrophysiology data analysis pipelines with a focus on multifractal and aperiodic analyses.</p>
+                        <p>Neha Sara John is a Senior Research Engineer in the Cleveland Clinic's Epilepsy Center. She specializes in electrophysiology data analysis pipelines with a focus on multifractal and aperiodic analyses.</p>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/neha-sara-john/" class="social-link linkedin" title="LinkedIn" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
@@ -378,7 +379,26 @@
 
      <!-- Separator Line -->
     <div class="section-divider"></div>
-
+    <section class="alumni-section">
+        <h2 class="section-title">Lab Collaborators</h2>
+        <div class="team-grid">
+            <!-- Add alumni cards here -->
+            <div class="team-card">
+                <div class="card-content">
+                    <!--<h3 class="card-name">LEGENDARY CONTRIBUTORS</h3>-->
+                     <div class="alumni-item">
+                <span class="alumni-name">Dr. Balu Krishnan, PhD</span>
+                <a href="https://spikelab-ccf.github.io/" target="_blank" class="social-link colab" title="Website" aria-label="Website"> <i class="fas fa-home"></i>
+                </a>
+                </div>
+                  <div class="alumni-item">
+                <span class="alumni-name">Dr. Juan C. Bulacio</span>
+                <a href="https://providers.clevelandclinic.org/provider/juan-bulacio/4270295" target="_blank" class="social-link colab" title="Website" aria-label="Website"> <i class="fas fa-home"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Lab Alumni Section -->
     <section class="alumni-section">
         <h2 class="section-title">Lab Alumni</h2>
@@ -389,18 +409,19 @@
                     <h3 class="card-name">LEGENDARY CONTRIBUTORS</h3>
                      <div class="alumni-item">
                 <span class="alumni-name">Dr. Alejandro Nieto Ramos, PhD</span>
-                <a href="https://www.linkedin.com/in/alejandronieto-ramos" class="alumni-linkedin" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/alejandronieto-ramos" class="social-link alumni" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
                 </a>
                 </div>
                   <div class="alumni-item">
                 <span class="alumni-name">Dr. Efstathios Kondylis</span>
-                <a href="https://www.linkedin.com/in/efstathios-kondylis-b5157a11b" class="alumni-linkedin" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/efstathios-kondylis-b5157a11b" class="social-link alumni" title="LinkedIn" aria-label="LinkedIn"> <i class="fab fa-linkedin"></i>
                 </a>
                 </div>
             </div>
         </div>
     </section>
    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="footer-social">
       <!-- Replace these URLs with your actual profile links -->
@@ -416,6 +437,9 @@
       <a href = "https://x.com/epilepsydoc" target = "_blank" title = "X" aria-label = "X">
         <i class = "bi bi-twitter-x"></i>
       </a>
+      <a href="https://github.com/brAIn-dynectome-lab" class="social-link github" title="GitHub" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+      </a>  
     </div>
     
     <div class="copyright">
@@ -423,11 +447,7 @@
     </div>
     
     <p>Reach out via ResearchGate, LinkedIn, &#120143 or visit us at Cleveland Clinic!</p>
-    <div class="footer-logo">
-    <img src="../images/CC_hires_c.png" alt="Cleveland Clinic" loading="lazy">
-  </div>
   </footer>
-
 
     <script>
         // AnimeJS entrance animations for flip cards

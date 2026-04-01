@@ -3,15 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>brAIn Dynectome Lab</title>
+  <title>Grants - brAIn Dynectome Lab</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" sizes="256x256" href="../images/lab-logo-v2.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <!-- Neural Reckoning clean CSS aesthetic -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+      line-height: 1.7; 
+      color: #333; 
+      padding-top: 160px; /* FIX: Prevents navbar from covering content */
+    }
+    .content { 
+      max-width: 700px; 
+      margin: 0 auto; 
+      padding: 2rem 1.5rem; 
+    }
+    h1 { font-weight: 600; color: #1a1a1a; margin-bottom: 1rem; }
+    h2, h3 { font-weight: 600; color: #1a1a1a; margin-top: 3rem; margin-bottom: 1rem; }
+    h5 { 
+      font-weight: 500; 
+      color: #555; 
+      margin-top: 2.5rem; 
+      margin-bottom: 1rem; 
+      border-bottom: 1px solid #eee; 
+      padding-bottom: 0.5rem; 
+    }
+    .grant-item { margin: 1.5rem 0 2rem; }
+    .grant-item strong { font-weight: 600; }
+    .grant-item em { font-style: italic; color: #666; font-weight: 500; }
+    .grant-link { color: #1a73e8; text-decoration: none; }
+    .grant-link:hover { text-decoration: underline; }
+    ul.list-unstyled { padding-left: 0; }
+
+  </style>
 </head>
 <body>
-   <nav class="navbar" id="navbar">
+  <!-- Animated Navbar (fixed top) -->
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
         <img src="../images/lab-logo-v2.png" alt="brAIn Dynectome Lab" class="logo-img">
@@ -21,7 +55,7 @@
         <li><a href="research.html" class="nav-link">Research</a></li>
         <li><a href="team.html" class="nav-link">Team</a></li>
         <li><a href="publications.html" class="nav-link">Publications</a></li>
-        <li><a href="grants.html" class="nav-link">Grants</a></li>
+        <li><a href="grants.html" class="nav-link active">Grants</a></li>
         <li><a href="news.html" class="nav-link">News</a></li>
       </ul>
       <div class="hamburger">
@@ -32,54 +66,15 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION FIRST (full viewport) -->
-  <section class="hero" id="home">
-    <div class="hero-grid" id="grid"></div>
-    <div class="hero-content">
-      <div class="hero-title-wrapper" id="hero-title-wrapper">
-        <div class="hero-title" id="hero-title">BRAIN DYNECTOME LAB</div>
-      </div>
-      <p class="hero-subtitle">SEEG Analysis • Brain Dynamics • Epilepsy Research</p>
-    </div>
-  </section>
-
-  <!-- News/Layout Section (SCROLLS BELOW hero) -->
-<section class="layout-section" id="intro-layout">
-  <div class="layout-container">
-  <!-- LEFT COLUMN: PI + Blurb -->
-  <div class="cards-container">
-    <div class="card pi-spotlight">
-      <a href="./team.html" class="pi-link">
-        <div class="pi-container">
-          <img src="../images/team/DS.webp" alt="Demitre Serletis" class="pi-photo">
-          <div class="pi-text">
-            <h3 class="section-title">Demitre Serletis, MD, PhD</h3>
-            <h5>Principal Investigator</h5>
-            <p>Leading computational neuroscience research on epilepsy dynamics using sEEG analysis.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="lab-blurb">
-      <p>The Dynectome Lab is led by Demitre Serletis at Cleveland Clinic.</p>
-      <p>We aim to find define high-complexity dynamical connectivity ('dynectome') profiles in stereoelectroencephalography (SEEG) data from drug-resistant epilepsy patients for applications towards surgical decision-making. We use theorectical and computational approaches.</p>
-      <p>We are particuarly interested in quantifying 'self-similarity', 'unpredictability' and frequency coupling in SEEG data.</p>
-      <p>We welcome curious students, collaborators, and clinicians interested in epilepsy research!</p>
+  <section class="layout-section" id="intro-layout" style="padding-top: 20px;">
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+      <!-- Grants load here automatically -->
     </div>
   </div>
-
-  <!-- RIGHT COLUMN: News (narrow) -->
-  <div class="news-column">
-    <h2 class="section-title">Latest News</h2>
-    <ul class="news-list">
-      <!-- 3 latest auto-loaded here -->
-    </ul>
-  </div>
-</div>
 </section>
-
    <!-- FOOTER -->
+<!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="footer-social">
       <!-- Replace these URLs with your actual profile links -->
@@ -106,9 +101,17 @@
     
     <p>Reach out via ResearchGate, LinkedIn, &#120143 or visit us at Cleveland Clinic!</p>
   </footer>
-
-
-  <script src="../js/news.js"></script>
-  <script src="../js/landing.js"></script>
+<script src="../js/grants.js"></script>
+<script src="../js/landing.js"></script>
+  <script>
+    // Bootstrap collapse functionality (minimal)
+    document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(trigger => {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('data-bs-target'));
+        target.classList.toggle('show');
+      });
+    });
+  </script>
 </body>
 </html>

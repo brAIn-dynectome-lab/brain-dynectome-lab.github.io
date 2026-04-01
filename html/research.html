@@ -6,6 +6,7 @@
   <title>Research | brAIn Dynectome Lab</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" sizes="256x256" href="../images/lab-logo-v2.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   
@@ -146,9 +147,9 @@
   </style>
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
+      <a href="#" class="nav-logo">
         <img src="../images/lab-logo-v2.png" alt="brAIn Dynectome Lab" class="logo-img">
       </a>
       <ul class="nav-menu">
@@ -156,9 +157,14 @@
         <li><a href="research.html" class="nav-link active">Research</a></li>
         <li><a href="team.html" class="nav-link">Team</a></li>
         <li><a href="publications.html" class="nav-link">Publications</a></li>
+        <li><a href="grants.html" class="nav-link">Grants</a></li>
         <li><a href="news.html" class="nav-link">News</a></li>
       </ul>
-      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
@@ -166,7 +172,7 @@
     <section class="layout-section" id="research-layout">
       <!-- Title gets layout-container for consistent centering -->
       <div class="layout-container">
-        <h2 class="section-title">Our Research: Decoding Brain Dynamics in Epilepsy</h2>
+        <h2 class="section-title">Our Research Themes: Decoding Brain Dynamics in Epilepsy</h2>
       </div>
 
       <!-- Research grid spans full width -->
@@ -178,7 +184,7 @@
             High- and low-complexity dynamics inherent to SEEG time series data lend themselves to measurement of the degree of self-similarity (or scale-invariance) within these signals. 
           </p>
           <p>
-            This property defines relationships emergin at different scales (e.g over shorter or longer time windows), used to define the trajectory of a dynamical system (like the brain) in 'phase space'.
+            This property defines relationships emerging at different scales (e.g over shorter or longer time windows), used to define the trajectory of a dynamical system (like the brain) in 'phase space'.
           </p>
           <p>
             We seek to investigate multifractal features across epileptiform states and neuroanatomical structures in SEEG data.
@@ -195,7 +201,7 @@
         <div class="research-gif-card">
           <div class="research-gif-header">
             <h3>Visual Summary</h3>
-            <span class="research-gif-tag"><a href = "#"> Fractal Tree.</a></span>
+            <span class="research-gif-tag"><a> Fractal Tree.</a></span>
           </div>
           <div class="research-gif-box">
             <img src="../images/research/Fractal_tree.gif" alt="Research summary animation"> 
@@ -263,19 +269,21 @@
         <div class="research-gif-card">
           <div class="research-gif-header">
             <h3>Visual Summary</h3>
-            <span class="research-gif-tag"><a href = "https://github.com/fooof-tools/Visualizers/blob/main/gifs/specparam-algorithm.gif"> Donoghue et al.</a></span>
+            <span class="research-gif-tag"><a> 1/f-like noise</a></span>
           </div>
 
           <div class="research-gif-box">
-            <img src="../images/research/specparam-algorithm.gif" alt="Research summary animation"> 
+            <img src="../images/research/NSJ_fooof.gif" alt="Research summary animation"> 
           </div>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="footer-social">
+      <!-- Replace these URLs with your actual profile links -->
       <a href="https://www.researchgate.net/profile/Demitre-Serletis" target="_blank" title="ResearchGate" aria-label="ResearchGate">
         <i class="bi bi-bookmark-heart"></i>
       </a>
@@ -285,20 +293,19 @@
       <a href="https://www.linkedin.com/in/demitre-serletis" target="_blank" title="LinkedIn" aria-label="LinkedIn">
         <i class="bi bi-linkedin"></i>
       </a>
-      <a href="https://x.com/epilepsydoc" target="_blank" title="X" aria-label="X">
-        <i class="bi bi-twitter-x"></i>
+      <a href = "https://x.com/epilepsydoc" target = "_blank" title = "X" aria-label = "X">
+        <i class = "bi bi-twitter-x"></i>
       </a>
+      <a href="https://github.com/brAIn-dynectome-lab" class="social-link github" title="GitHub" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+      </a>  
     </div>
-
+    
     <div class="copyright">
       © 2026 brAIn Dynectome Lab. All rights reserved.
     </div>
-
-    <p>Reach out via ResearchGate, LinkedIn, &#120143 or visit us at Cleveland Clinic!</p>
     
-    <div class="footer-logo">
-      <img src="../images/CC_hires_c.png" alt="Cleveland Clinic" loading="lazy">
-    </div>
+    <p>Reach out via ResearchGate, LinkedIn, &#120143 or visit us at Cleveland Clinic!</p>
   </footer>
 
   <script src="../js/landing.js"></script>

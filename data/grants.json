@@ -1,0 +1,64 @@
+[
+  {
+    "year": 2026,
+    "items": [
+      {
+        "award": "Transformative Neuroscience Research Development Award",
+        "location": "Cleveland Clinic Neurological Institute, Cleveland, OH",
+        "title": "Dynectome Metrics in Human SEEG Data for Epilepsy Surgery Decision-Making"
+        
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "items": [
+      {
+        "award": "Emerging Scientist/Early-Stage Clinician Scientist Career Development Award",
+        "location": "Cleveland Clinic Neurological Institute, Cleveland, OH",
+        "title": "Application of Neuroengineering and Machine Learning Methods to the Study of Dynamical Complexity in Human Epileptiform sEEG Recordings"
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "items": [
+      {
+        "award": "Department of Surgery, Geographical Full-Time Research Grant",
+        "location": "University of Manitoba, Winnipeg, Manitoba / Canada",
+        "title": "Neurodynamical features of epileptiform in vivo human intracranial EEG signals"
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "items": [
+      {
+        "award": "Department of Surgery, Geographical Full-Time Research Grant",
+        "location": "University of Manitoba, Winnipeg, Manitoba / Canada",
+        "title": "Morphometric MRI analysis for detection of focal cortical dysplasias in MRI-negative epilepsy"
+      }
+    ]
+  },
+  {
+    "year": 2016,
+    "items": [
+      {
+        "award": "Research Investment Fund and Children's Hospital Research Institute of Manitoba",
+        "location": "University of Manitoba, Winnipeg, Manitoba / Canada",
+        "title": "Manitoba Neurosurgical Laboratory Grant"
+      },
+      {
+        "award": "Thorlakson Chair in Surgical Research Establishment",
+        "location": "University of Manitoba, Winnipeg, Manitoba / Canada",
+        "title": "Computational Neuroengineering and Imaging Research Program"
+      },
+      {
+        "award": "National Science Foundation EPSCoR Grant",
+        "location": "Co-I (Multisite grant, PI = Dr. Leonidas Iasemidis)",
+        "title": "Probing and understanding the brain: Micro and macro dynamics of seizure and memory networks"
+      }
+    ]
+  }
+  
+]
