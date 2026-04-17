@@ -6,14 +6,38 @@
   margin-top: clamp(80px, 10vh, 120px);
 }
 
+/* Specifically target the research section to remove top padding */
+#research-layout {
+  padding-top: 1rem; /* Reduces the gap between the nav and the title */
+}
+
+/* Remove the large bottom padding from the title container */
+#research-layout .layout-container {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto !important; /* Overrides the clamp min-height in styles.css */
+}
+
+/* Tighten the section title specifically */
+#research-layout .section-title {
+  margin-bottom: 0.5rem; /* Reduced from 1.2rem */
+}
+
+/* Pull the research grid up closer to the title */
 .research-layout {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* Standard desktop split */
-  gap: 2rem;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.5rem; /* Slightly tighter gap between cards */
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding-top: 1.5rem !important; /* This is the main gap killer */
+  padding-bottom: 2rem;
   align-items: stretch;
+}
+
+/* Optional: If the layout-section itself is too tall */
+.layout-section#research-layout {
+  padding-top: 2rem !important; 
 }
 
 /* Card Styling */
