@@ -1,0 +1,91 @@
+/* Research Page Specific Styles */
+
+/* Layout Fixes */
+.main-content {
+  flex: 1;
+  margin-top: clamp(80px, 10vh, 120px);
+}
+
+.research-layout {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* Standard desktop split */
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  align-items: stretch;
+}
+
+/* Card Styling */
+.research-text-card, .research-gif-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(10, 56, 87, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-text-card h3 {
+  color: #0A3857;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.research-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto; /* Pushes pills to bottom */
+  padding-top: 1.5rem;
+}
+
+.research-pill {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background: #94B9F5;
+  color: #0A3857;
+  font-weight: 600;
+}
+
+/* GIF / Visual Summary Card */
+.research-gif-card {
+  width: 100%; /* Changed from 74% to fill column */
+}
+
+.research-gif-box {
+  border-radius: 12px;
+  background: #f0f4f8;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.research-gif-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .research-layout {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1.5rem;
+  }
+
+  .research-text-card, .research-gif-card {
+    padding: 1.5rem;
+  }
+
+  /* Reorder if you want Text then GIF for each pair */
+  .research-gif-card {
+    margin-bottom: 2rem;
+  }
+}

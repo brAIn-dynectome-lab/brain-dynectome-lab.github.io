@@ -145,18 +145,36 @@ body {
 }
 /* On very small screens, we slightly reduce the tracking (letter spacing) 
    to help it fit without becoming microscopic */
+/* Fix for the Hero Title to prevent clipping */
 @media (max-width: 480px) {
   .hero-title {
-    letter-spacing: -0.02em;
-    font-size: clamp(1.2rem, 8.5vw, 2.5rem);
+    /* 1. Added @ symbol for proper syntax */
+    /* 2. Reduced scaling to 7vw to ensure 21 characters fit on a 320px screen */
+    /* 3. Lowered the minimum to 1rem for ultra-narrow devices */
+    font-size: clamp(1rem, 7vw, 2.2rem);
+    letter-spacing: -0.03em; /* Tightened more for mobile */
+    width: 100%;
+    padding: 0 10px;
+    display: block;
+  }
+
+  .hero-subtitle {
+    /* Slightly smaller font and reduced margin for mobile compactness */
+    font-size: clamp(0.9rem, 4.5vw, 1.1rem) !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 1rem;
+    line-height: 1.4;
   }
 }
+
+/* Base Subtitle - ensure it allows wrapping */
 .hero-subtitle {
   font-size: clamp(1.1rem, 4vw, 1.4rem);
   max-width: 600px;
   margin: 0 auto 2.5rem;
+  white-space: normal; /* Allows the subtitle to wrap if it's too long */
+  opacity: 0.85;
 }
-
 .cta-buttons {
   display: flex;
   flex-wrap: wrap;
