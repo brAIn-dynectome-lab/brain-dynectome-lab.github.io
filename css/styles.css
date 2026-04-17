@@ -130,40 +130,59 @@ body {
 }
 
 .hero-title {
-  white-space: nowrap;
-  /* The '90vw' ensures the text is never wider than 90% of the screen, 
-     acting as a secondary fail-safe to the font-size clamp. 
-  */
-  max-width: 90vw; 
-  font-size: clamp(1.2rem, 6.5vw, 5rem); 
+  display: flex;
+  flex-wrap: wrap; /* Allows words to drop to the next line */
+  justify-content: center;
+  gap: 0.5rem; /* Space between words */
   font-weight: 500;
-  margin-bottom: 1.2rem;
-  cursor: pointer;
+  color: #0A3857;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto 1.2rem;
+  text-align: center;
+}
+
+.title-word span {
   
-  /* Use 'contain' to keep the scaling animations within bounds */
-  contain: layout; 
+  display: inline-block;
+  font-size: inherit; /* Forces all spans to use the title's font-size */
+  font-weight: inherit;
+  line-height: 1; /* Prevents vertical 'jumping' */
+  vertical-align: baseline; /* Keeps letters on the same invisible line */
+  transform-origin: center bottom; /* Ensures scaling happens 'upwards' and 'outwards' */
+}
+
+/* Ensure the AI letters don't have unique styling until the animation kicks in */
+.ai-letter {
+  color: #0A3857;
+  font-size: 100%; 
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 /* On very small screens, we slightly reduce the tracking (letter spacing) 
    to help it fit without becoming microscopic */
 /* Fix for the Hero Title to prevent clipping */
 @media (max-width: 480px) {
   .hero-title {
-    /* 1. Added @ symbol for proper syntax */
-    /* 2. Reduced scaling to 7vw to ensure 21 characters fit on a 320px screen */
-    /* 3. Lowered the minimum to 1rem for ultra-narrow devices */
-    font-size: clamp(1rem, 7vw, 2.2rem);
-    letter-spacing: -0.03em; /* Tightened more for mobile */
-    width: 100%;
-    padding: 0 10px;
-    display: block;
+    flex-direction: column; /* Stacks words vertically */
+    align-items: center;
+    font-size: clamp(1.8rem, 12vw, 2.5rem); /* Larger size since it has more room now */
+    gap: 0.1rem; /* Tighter vertical gap */
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    margin-top: 1rem;
   }
 
-  .hero-subtitle {
-    /* Slightly smaller font and reduced margin for mobile compactness */
-    font-size: clamp(0.9rem, 4.5vw, 1.1rem) !important;
-    margin-bottom: 1.5rem !important;
-    padding: 0 1rem;
-    line-height: 1.4;
+  .word-space {
+    display: none; /* Removes horizontal spaces when stacked */
+  }
+  
+  .title-word {
+    display: block; /* Ensures each word takes a full line */
   }
 }
 

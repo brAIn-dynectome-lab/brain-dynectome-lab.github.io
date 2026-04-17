@@ -91,87 +91,73 @@ if (layoutContainer) {
 
 // 6. AI HOVER EFFECT - FIXED SPACES + CORRECT INDICES
 document.addEventListener('DOMContentLoaded', () => {
-    function adjustTitleScale() {
-    const title = document.getElementById('hero-title');
-    const wrapper = document.getElementById('hero-title-wrapper');
-    
-    if (!title || !wrapper) return;
-
-    // Reset scale to calculate natural width
-    title.style.transform = 'scale(1)';
-    
-    const titleWidth = title.offsetWidth;
-    const containerWidth = wrapper.offsetWidth * 0.9; // 90% of container
-
-    if (titleWidth > containerWidth) {
-      const scaleFactor = containerWidth / titleWidth;
-      title.style.transform = `scale(${scaleFactor})`;
-      title.style.transformOrigin = 'center';
-    }
-  }
-
-  // Run on load and on resize
-  window.addEventListener('load', adjustTitleScale);
-  window.addEventListener('resize', adjustTitleScale);
   const heroTitle = document.getElementById('hero-title');
-  
-  if (heroTitle) {
-    const text = "BRAIN DYNECTOME LAB";
-    heroTitle.innerHTML = ''; // Clear original
+  if (!heroTitle) return;
 
-    // Create a fragment to improve performance
-    const fragment = document.createDocumentFragment();
-    
-    // We split into characters but keep them in one flow
-    [...text].forEach((char) => {
-      const span = document.createElement('span');
-      span.style.display = 'inline-block';
-      span.style.transition = 'all 0.3s ease';
+  const words = ["BRAIN", "DYNECTOME", "LAB"];
+  heroTitle.innerHTML = ''; // Clear existing
+
+  words.forEach((word, wordIndex) => {
+    // Create a container for each word
+    const wordSpan = document.createElement('span');
+    wordSpan.style.display = 'inline-block';
+    wordSpan.className = 'title-word';
+
+    // Split word into letters
+    [...word].forEach((char, charIndex) => {
+      const letterSpan = document.createElement('span');
+      letterSpan.textContent = char;
+      letterSpan.style.display = 'inline-block';
+      letterSpan.style.transition = 'all 0.3s ease';
       
-      if (char === ' ') {
-        span.innerHTML = '&nbsp;'; // Use non-breaking space
-      } else {
-        span.textContent = char;
+      // Identify "AI" in "BRAIN" (Indices 2 and 3)
+      if (wordIndex === 0 && (charIndex === 2 || charIndex === 3)) {
+        letterSpan.classList.add('ai-letter');
       }
-      fragment.appendChild(span);
+      
+      wordSpan.appendChild(letterSpan);
     });
 
-    heroTitle.appendChild(fragment);
-    const chars = heroTitle.querySelectorAll('span');
+    heroTitle.appendChild(wordSpan);
     
-    // Correct indices for "BRAIN" -> B=0, R=1, A=2, I=3, N=4
-    // We target A (index 2) and I (index 3)
-    const aiChars = [chars[2], chars[3]]; 
-    
-    const aiTimeline = anime.timeline({
-      autoplay: false,
-      easing: 'easeOutExpo'
-    });
-    
-    aiTimeline
-      .add({
-        targets: aiChars,
-        color: ['#0A3857', '#92d4a2'],
-        scale: [1, 1.2],
-        duration: 400
-      })
-      .add({
-        targets: aiChars,
-        color: ['#92d4a2', '#f08d8d'],
-        duration: 300
-      });
+    // Add a space between words (hidden on mobile via CSS column layout)
+    if (wordIndex < words.length - 1) {
+      const space = document.createElement('span');
+      space.innerHTML = '&nbsp;';
+      space.className = 'word-space';
+      heroTitle.appendChild(space);
+    }
+  });
 
-    heroTitle.addEventListener('mouseenter', () => aiTimeline.play());
-    heroTitle.addEventListener('mouseleave', () => {
-      aiTimeline.pause();
-      anime({
-        targets: aiChars,
-        color: '#0A3857',
-        scale: 1,
-        duration: 500,
-        easing: 'easeOutExpo'
-      });
+  // Re-attach Anime.js animation to the .ai-letter classes
+  const aiChars = document.querySelectorAll('.ai-letter');
+  const aiTimeline = anime.timeline({ autoplay: false, easing: 'easeOutExpo' });
+
+  aiTimeline
+    .add({
+      targets: aiChars,
+      color: ['#0A3857', '#92d4a2'],
+      scale: [1, 1.2],
+      duration: 400
+    })
+    .add({
+      targets: aiChars,
+      color: ['#92d4a2', '#f08d8d'],
+      duration: 300
     });
+
+  heroTitle.addEventListener('mouseenter', () => aiTimeline.play());
+  heroTitle.addEventListener('mouseleave', () => {
+  // Instead of just reversing the timeline, force a hard reset 
+  // to ensure they return to exactly 1:1 scale with the other letters.
+  anime({
+    targets: '.ai-letter',
+    color: '#0A3857',
+    scale: 1, // Strict return to original size
+    duration: 500,
+    easing: 'easeOutExpo'
+  });
+});
 
     // Mobile Support: Trigger on tap
     heroTitle.addEventListener('touchstart', () => {
@@ -179,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => aiTimeline.reverse(), 2000);
     });
   }
-});
+);
 
 // Hamburger functionality for mobile
 document.addEventListener('DOMContentLoaded', () => {
