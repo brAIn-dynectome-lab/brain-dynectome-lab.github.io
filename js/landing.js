@@ -91,34 +91,58 @@ if (layoutContainer) {
 
 // 6. AI HOVER EFFECT - FIXED SPACES + CORRECT INDICES
 document.addEventListener('DOMContentLoaded', () => {
+    function adjustTitleScale() {
+    const title = document.getElementById('hero-title');
+    const wrapper = document.getElementById('hero-title-wrapper');
+    
+    if (!title || !wrapper) return;
+
+    // Reset scale to calculate natural width
+    title.style.transform = 'scale(1)';
+    
+    const titleWidth = title.offsetWidth;
+    const containerWidth = wrapper.offsetWidth * 0.9; // 90% of container
+
+    if (titleWidth > containerWidth) {
+      const scaleFactor = containerWidth / titleWidth;
+      title.style.transform = `scale(${scaleFactor})`;
+      title.style.transformOrigin = 'center';
+    }
+  }
+
+  // Run on load and on resize
+  window.addEventListener('load', adjustTitleScale);
+  window.addEventListener('resize', adjustTitleScale);
   const heroTitle = document.getElementById('hero-title');
   
   if (heroTitle) {
-    // Split text but preserve spaces properly
-    const text = heroTitle.textContent;
-    const spans = [];
+    const text = "BRAIN DYNECTOME LAB";
+    heroTitle.innerHTML = ''; // Clear original
+
+    // Create a fragment to improve performance
+    const fragment = document.createDocumentFragment();
     
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
+    // We split into characters but keep them in one flow
+    [...text].forEach((char) => {
+      const span = document.createElement('span');
+      span.style.display = 'inline-block';
+      span.style.transition = 'all 0.3s ease';
+      
       if (char === ' ') {
-        // Preserve regular space
-        spans.push(' ');
+        span.innerHTML = '&nbsp;'; // Use non-breaking space
       } else {
-        // Wrap non-space characters in spans
-        spans.push(`<span style="display: inline-block; transition: all 0.3s ease;">${char}</span>`);
+        span.textContent = char;
       }
-    }
-    
-    heroTitle.innerHTML = spans.join('');
+      fragment.appendChild(span);
+    });
+
+    heroTitle.appendChild(fragment);
     const chars = heroTitle.querySelectorAll('span');
     
-    // Map character positions accounting for spaces
-    // "brAIn Dynectome Lab" character indices: b=0,r=1, ,=2,A=3,I=5,n=6
-    const aiChars = [chars[2], chars[3]]; // A (index 3), I (index 5)
+    // Correct indices for "BRAIN" -> B=0, R=1, A=2, I=3, N=4
+    // We target A (index 2) and I (index 3)
+    const aiChars = [chars[2], chars[3]]; 
     
-    heroTitle.style.cursor = 'pointer';
-    
-    // Hover animation for AI letters only
     const aiTimeline = anime.timeline({
       autoplay: false,
       easing: 'easeOutExpo'
@@ -127,31 +151,32 @@ document.addEventListener('DOMContentLoaded', () => {
     aiTimeline
       .add({
         targets: aiChars,
-        color: ['#0A3857', '#92d4a2'], // Dark blue to mint green
-        scale: [1, 1.1],
+        color: ['#0A3857', '#92d4a2'],
+        scale: [1, 1.2],
         duration: 400
       })
       .add({
         targets: aiChars,
-        color: ['#92d4a2', '#f08d8d'], // Neon blue to coral
-        scale: [1.1, 1.15],
+        color: ['#92d4a2', '#f08d8d'],
         duration: 300
-      })
-      .add({
-        targets: aiChars,
-        color: ['#f08d8d', '#7157a9'], // Coral to gold
-        scale: [1.15, 1],
-        duration: 400
       });
-    
-    // Mouse enter - play forward
-    heroTitle.addEventListener('mouseenter', () => {
-      aiTimeline.play();
-    });
-    
-    // Mouse leave - reverse to original
+
+    heroTitle.addEventListener('mouseenter', () => aiTimeline.play());
     heroTitle.addEventListener('mouseleave', () => {
-      aiTimeline.reverse();
+      aiTimeline.pause();
+      anime({
+        targets: aiChars,
+        color: '#0A3857',
+        scale: 1,
+        duration: 500,
+        easing: 'easeOutExpo'
+      });
+    });
+
+    // Mobile Support: Trigger on tap
+    heroTitle.addEventListener('touchstart', () => {
+      aiTimeline.play();
+      setTimeout(() => aiTimeline.reverse(), 2000);
     });
   }
 });

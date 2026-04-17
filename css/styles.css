@@ -113,23 +113,44 @@ body {
 .hero-content {
   position: relative;
   z-index: 10;
-  max-width: min(900px, 90vw);
+  /* Use clamp for responsive horizontal padding */
+  padding: 0 clamp(1rem, 5vw, 3rem); 
+  width: 100%;
+  max-width: 100vw; /* Strict limit to viewport width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Prevents spans from causing horizontal scroll */
 }
 
 .hero-title-wrapper {
-  display: contents;
-  transition: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  white-space: nowrap;
+  /* The '90vw' ensures the text is never wider than 90% of the screen, 
+     acting as a secondary fail-safe to the font-size clamp. 
+  */
+  max-width: 90vw; 
+  font-size: clamp(1.2rem, 6.5vw, 5rem); 
   font-weight: 500;
   margin-bottom: 1.2rem;
   cursor: pointer;
-  will-change: transform;
-  position: relative;
+  
+  /* Use 'contain' to keep the scaling animations within bounds */
+  contain: layout; 
 }
-
+/* On very small screens, we slightly reduce the tracking (letter spacing) 
+   to help it fit without becoming microscopic */
+@media (max-width: 480px) {
+  .hero-title {
+    letter-spacing: -0.02em;
+    font-size: clamp(1.2rem, 8.5vw, 2.5rem);
+  }
+}
 .hero-subtitle {
   font-size: clamp(1.1rem, 4vw, 1.4rem);
   max-width: 600px;
