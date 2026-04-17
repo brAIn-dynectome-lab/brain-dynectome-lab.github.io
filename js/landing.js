@@ -1,7 +1,11 @@
 // 1. GRID (always works)
 const grid = document.getElementById('grid');
 if (grid) {
-  const cols = 20, rows = 15;
+  // Reduce density for mobile
+  const isMobile = window.innerWidth < 768;
+  const cols = isMobile ? 10 : 20; 
+  const rows = isMobile ? 8 : 15;
+  // const cols = 20, rows = 15;
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       const cell = document.createElement('div');
@@ -152,11 +156,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Hamburger functionality for mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('mobile-active');
+      // Optional: Animate hamburger to X
+      hamburger.classList.toggle('is-active');
+    });
+  }
+});
+
 // ========== NEW: SCROLL-TRIGGERED TITLE ANIMATION ==========
 let titleMoved = false;
 let titleClone = null;
 
 function initTitleScrollEffect() {
+  if (window.innerWidth < 768) {
+    console.log("Mobile detected: Skipping title scroll effect for performance.");
+    return; 
+  }
   const heroWrapper = document.getElementById('hero-title-wrapper');
   const heroTitle = document.getElementById('hero-title');
   const navbar = document.getElementById('navbar');

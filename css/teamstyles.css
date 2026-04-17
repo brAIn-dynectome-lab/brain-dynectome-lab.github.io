@@ -1,0 +1,382 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(45deg, #94B9F5 60%, #C2E9FB 100%);
+  color: #0A3857;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        } */
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0A3857;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  padding: 0.25rem 0;
+}
+
+.nav-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo .logo-img {
+  height: clamp(60px, 12vw, 120px);
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.nav-link {
+  color: #94B9F5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FFEFCC;
+}
+
+.nav-link.active {
+  color: #FFEFCC;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #94B9F5;
+  transition: 0.3s;
+}
+
+/* Navbar title position (when moved up) */
+.navbar-title {
+  position: absolute !important;
+  left: clamp(140px, 20vw, 280px);
+  top: 30%;
+  transform: translateY(-50%);
+  font-size: clamp(1.2rem, 3vw, 1.8rem) !important;
+  margin: 0 !important;
+  white-space: nowrap;
+  z-index: 1001;
+  opacity: 0;
+  color: #94B9F5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.navbar-title span {
+  color: #94B9F5 !important;
+  transition: none !important;
+}
+
+.nav-container.title-active {
+  padding-left: clamp(300px, 40vw, 500px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0A3857;
+    padding: 2rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  /* Class to be toggled via JS */
+  .nav-menu.mobile-active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Disable the title-moving effect on mobile to prevent layout jumps */
+  .navbar-title {
+    display: none !important;
+  }
+}
+
+/* Hero section with generous padding */
+.team-hero {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 120px 20px 40px;
+    margin-top: 80px; /* Extra space from navbar */
+}
+.team-hero h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+.team-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+/* Team sections */
+.team-section, .alumni-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+}
+/* Separator line */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #606099, transparent);
+    margin: 1rem auto;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(118, 75, 162, 0.3);
+}
+/* Team grid - Small non-flip cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.team-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.5rem;
+}
+.card-role {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.card-bio {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.alumni-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #FFF6E6;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.flip-card-front {
+    background: linear-gradient(135deg, #0A3857 0%, #94B9F5 100%);
+    color: #D4DFF8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.flip-card-front img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+.flip-card-back {
+    background: white;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.flip-card-back h2 {
+    margin-top: 0;
+    color: #333;
+}
+.flip-card-back p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+.social-link:hover {
+    background: #94B9F5 ;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+}
+.social-link.github:hover { background: #333; }
+.social-link.orcid:hover { background: #a6ce39; }
+.social-link.scholar:hover { background: #4285f4; }
+.social-link.linkedin:hover { background: #0077b5; }
+/* Keyframe animations inspired by animejs */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+@media (max-width: 600px) {
+    .team-hero {
+        padding: 100px 20px 60px;
+        margin-top: 70px;
+    }
+    .team-hero h1 {
+        font-size: 2.2rem;
+    }
+    .team-section {
+        padding: 60px 20px;
+    }
+    .flip-card {
+        height: 350px;
+    }
+    .flip-card-front img {
+        width: 120px;
+        height: 120px;
+    }
+    .social-links {
+        gap: 0.8rem;
+    }
+    .social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}

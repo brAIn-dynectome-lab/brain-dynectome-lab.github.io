@@ -538,11 +538,39 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
   .nav-menu {
-    display: none;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0A3857;
+    padding: 2rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  /* Class to be toggled via JS */
+  .nav-menu.mobile-active {
+    display: flex;
   }
 
   .hamburger {
     display: flex;
+  }
+  
+  /* Disable the title-moving effect on mobile to prevent layout jumps */
+  .navbar-title {
+    display: none !important;
+  }
+  .hero {
+    height: auto;
+    min-height: 80vh;
+    padding-top: 120px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem; /* Scale down for narrow screens */
   }
 
   .cta-buttons {
